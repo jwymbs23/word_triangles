@@ -63,7 +63,7 @@ else:
     success = 0
     while im_fail_count < 5:
         try:
-            imagename = tri.make_triangle(words[0], words[1], words[2], substrings[0], substrings[1], substrings[2])
+            imagename = tri.make_triangle(words[0], words[1], words[2], substrings[0], substrings[1], substrings[2], True)
             print(imagename)
             success = 1
             break
@@ -78,4 +78,4 @@ else:
         post_saved()
     else:
         now = time.strftime("%c")
-        api.update_with_media(imagename, status='It is ' + str(now) + ', and it is time for a word triangle. #' + substrings[0] + ' #' + substrings[1] + ' #' + substrings[2])
+        api.update_with_media(imagename, status='It is ' + str(now) + ', and it is time for a word triangle. #' + words[0] + ' #' + words[1] + ' #' + words[2])
